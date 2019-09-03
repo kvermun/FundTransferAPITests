@@ -14,4 +14,4 @@ How to run the tests -
 4. Using Command line 
 	* javac SimpleClient.java
  	* java SimpleClient
-5. Using Intellij, you can open the project in Intellij and run the main method as well.
+5. You can open the project in Intellij and run the main method as well.
