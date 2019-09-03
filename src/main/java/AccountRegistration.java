@@ -6,21 +6,31 @@ import java.util.Random;
 
 public class AccountRegistration extends Thread {
 
+    Integer accountIdMin;
+    Integer accountIdMax;
+    Double minBalance;
+    Double maxBalance;
+    Random rn = new Random();
+
+    AccountRegistration(Integer accountIdMinValue, Integer accountIdMaxValue, Double minStartingBalance, Double maxStartingBalance)
+    {
+        accountIdMin = accountIdMinValue;
+        accountIdMax = accountIdMaxValue;
+        minBalance   = minStartingBalance;
+        maxBalance   = maxStartingBalance;
+    }
+
     @Override
     public void run(){
 
-        Integer accountIdMin = 0;
-        Integer accountIdMax = 5;
-        Double min = 0.0;
-        Double max = 1000000.0;
-        Random rn = new Random();
+
 
         while(true)
         {
             try {
 
                 String accountId = "accountId" + Integer.toString( accountIdMin + rn.nextInt(accountIdMax - accountIdMin + 1) );
-                Double startingBalance = min + Math.random() * (max - min);
+                Double startingBalance = minBalance + Math.random() * (maxBalance - minBalance);
                 String queryUrl = "http://localhost:8000/register?accountId=" + accountId +"&startingBalance=" + Double.toString(startingBalance);
                 System.out.println("firing "+queryUrl);
 

@@ -6,14 +6,24 @@ import java.util.Random;
 
 public class FundsTransfer extends Thread {
 
+    Integer accountIdMin;
+    Integer accountIdMax;
+    Double amountMin;
+    Double amountMax;
+    Random rn = new Random();
+
+    FundsTransfer(Integer accountIdMinValue, Integer accountIdMaxValue, Double minTransferAmount, Double maxTransferAmount)
+    {
+        accountIdMin = accountIdMinValue;
+        accountIdMax = accountIdMaxValue;
+        amountMin    = minTransferAmount;
+        amountMax    = maxTransferAmount;
+    }
+
     @Override
     public void run()
     {
-        Double amountMin = 0.0;
-        Double amountMax = 1000.0;
-        Integer accountIdMin = 0;
-        Integer accountIdMax = 5;
-        Random rn = new Random();
+
 
         while(true)
         {
@@ -45,7 +55,6 @@ public class FundsTransfer extends Thread {
                 }
                 in.close();
 
-                //print result
                 System.out.println(response.toString());
 
                 Thread.sleep((long) (Math.random()*3000));
