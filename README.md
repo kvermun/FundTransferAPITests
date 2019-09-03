@@ -8,8 +8,8 @@ __Funds Transfer__
 This thread tries to transfer a random amount between 2 random account ids.
 
 How to run the tests -  
-1. First start the server in a seperate terminal or via Intellij.
-2. Clone the git repository in a folder
+1. First start the Fund Transfer Server [here](https://github.com/kvermun/FundTransferAPI) in a seperate terminal or via Intellij.
+2. Clone this git repository in a folder
 3. Navigate to the directory FundTransferAPITests/src/main/java
 4. Using Command line 
 	* javac SimpleClient.java
