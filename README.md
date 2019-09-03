@@ -1,11 +1,11 @@
 This project has the testing framework for our fund transfer service.
-The framework runs 2 threads-
+The framework runs 3 threads-
 
 __AccountRegistration__
-This thread continuously registers an account with a random accountId.
+This one thread continuously registers an account with a random accountId.
 
 __Funds Transfer__
-This thread tries to transfer a random amount between 2 random account ids.
+These 2 threads try to transfer a random amount between 2 random account ids.
 
 How to run the tests -  
 1. First start the Fund Transfer Server, [link here](https://github.com/kvermun/FundTransferAPI) , in a seperate terminal or via Intellij.
